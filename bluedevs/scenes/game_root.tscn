@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://d24p4l88rlp4q"]
+[gd_scene load_steps=4 format=3 uid="uid://d24p4l88rlp4q"]
 
 [ext_resource type="Texture2D" uid="uid://dhd8ppr6strt2" path="res://assets/backgrounds/start game/9hyc_1y8o_230928.jpg" id="1_somr8"]
+[ext_resource type="Script" path="res://scenes/button.gd" id="2_tsasy"]
+
+[sub_resource type="Theme" id="Theme_vryiu"]
 
 [node name="GameRoot" type="Node2D"]
 
@@ -8,5 +11,30 @@
 offset_left = 1.0
 offset_right = 1153.0
 offset_bottom = 648.0
+theme = SubResource("Theme_vryiu")
 texture = ExtResource("1_somr8")
 expand_mode = 1
+
+[node name="buton_start" type="Button" parent="."]
+offset_left = 462.0
+offset_top = 404.0
+offset_right = 672.0
+offset_bottom = 519.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "START
+"
+script = ExtResource("2_tsasy")
+
+[node name="titlu" type="Label" parent="."]
+offset_left = 404.0
+offset_top = 191.0
+offset_right = 731.0
+offset_bottom = 301.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "CALATORIA SPRE PARC"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="buton_start" to="buton_start" method="_on_pressed"]

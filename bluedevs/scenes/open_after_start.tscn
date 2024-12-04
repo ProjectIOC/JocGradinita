@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7x7ivlghprb5"]
+
+[ext_resource type="Texture2D" uid="uid://cxbggifkxu3ne" path="res://assets/backgrounds/test/pin.png" id="1_jmgw7"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 51.0
+offset_top = 31.0
+offset_right = 1140.0
+offset_bottom = 607.0
+texture = ExtResource("1_jmgw7")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 539.0
+offset_top = 296.0
+offset_right = 624.0
+offset_bottom = 339.0
+text = "SALUT
+"
+horizontal_alignment = 1
+vertical_alignment = 1
