@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://m3fts43jxkwi"]
+
+[ext_resource type="Texture2D" uid="uid://clxto0vh2obpd" path="res://assets/persons/KidGirl.png" id="1_4qrf6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8toq5"]
+atlas = ExtResource("1_4qrf6")
+region = Rect2(1250, 968, 625, 968)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xh4w"]
+atlas = ExtResource("1_4qrf6")
+region = Rect2(1875, 968, 625, 968)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfwk6"]
+atlas = ExtResource("1_4qrf6")
+region = Rect2(2500, 968, 625, 968)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmxba"]
+atlas = ExtResource("1_4qrf6")
+region = Rect2(0, 0, 625, 968)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qaeu4"]
+atlas = ExtResource("1_4qrf6")
+region = Rect2(625, 0, 625, 968)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lt0h0"]
+atlas = ExtResource("1_4qrf6")
+region = Rect2(1250, 0, 625, 968)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xihry"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8toq5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xh4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfwk6")
+}],
+"loop": true,
+"name": &"girl_running",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmxba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qaeu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lt0h0")
+}],
+"loop": true,
+"name": &"kidgirl_animation",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d3nqa"]
+radius = 176.235
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(23.9432, -109.25)
+scale = Vector2(0.227382, 0.228822)
+sprite_frames = SubResource("SpriteFrames_xihry")
+animation = &"girl_running"
+autoplay = "kidgirl_animation"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D"]
+position = Vector2(-10.5977, 151.367)
+shape = SubResource("CircleShape2D_d3nqa")

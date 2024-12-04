@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://dg0d8fbqcfxh2"]
+
+[ext_resource type="Texture2D" uid="uid://bcctqb1j7f7dl" path="res://assets/persons/KidSprite.png" id="1_q3wyx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yiajg"]
+atlas = ExtResource("1_q3wyx")
+region = Rect2(0, 0, 625, 968)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jhkw"]
+atlas = ExtResource("1_q3wyx")
+region = Rect2(625, 0, 625, 968)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7phk"]
+atlas = ExtResource("1_q3wyx")
+region = Rect2(1250, 0, 625, 968)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_80vnd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yiajg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jhkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7phk")
+}],
+"loop": true,
+"name": &"kid_animation",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mtoqv"]
+radius = 188.649
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.00018, -88.0001)
+scale = Vector2(0.2068, 0.208678)
+sprite_frames = SubResource("SpriteFrames_80vnd")
+animation = &"kid_animation"
+autoplay = "kid_animation"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D"]
+position = Vector2(0.000295162, 14.3762)
+shape = SubResource("CircleShape2D_mtoqv")

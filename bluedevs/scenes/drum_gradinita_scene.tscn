@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://ch6letfm4ktr4"]
+
+[ext_resource type="Script" path="res://scenes/drum_gradinita_scene.gd" id="1_ttjjb"]
+[ext_resource type="Texture2D" uid="uid://bfbbcc4l6ofa5" path="res://assets/backgrounds/drum gradinita/DrumGradinita.png" id="1_wxuch"]
+[ext_resource type="PackedScene" uid="uid://dg0d8fbqcfxh2" path="res://scenes/kid.tscn" id="2_ct0iy"]
+[ext_resource type="PackedScene" uid="uid://m3fts43jxkwi" path="res://scenes/KidGirl.tscn" id="3_tcavo"]
+[ext_resource type="Texture2D" uid="uid://cbkyty4nd7wa6" path="res://assets/backgrounds/drum gradinita/replici/Hei Darius hai sa mergem la gradinita.png" id="5_3fk65"]
+[ext_resource type="Texture2D" uid="uid://chqql6y23vxl3" path="res://assets/backgrounds/drum gradinita/replici/Dar mai intai trebuie sa strangem jucariile.png" id="6_8n83y"]
+[ext_resource type="Texture2D" uid="uid://c8fsgug0bp2yu" path="res://assets/backgrounds/drum gradinita/replici/Bine le strangem repede si apoi ne jucam.png" id="7_poc35"]
+[ext_resource type="Texture2D" uid="uid://bkqcqs7d42fem" path="res://assets/backgrounds/drum gradinita/replici/Da abia astept sa ne jucam.png" id="8_ox8fh"]
+
+[node name="DrumGradinitaScene" type="Node2D"]
+script = ExtResource("1_ttjjb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_wxuch")
+expand_mode = 1
+
+[node name="Character1" parent="." instance=ExtResource("2_ct0iy")]
+position = Vector2(800, 636)
+
+[node name="Character2" parent="." instance=ExtResource("3_tcavo")]
+position = Vector2(870, 640)
+
+[node name="Reply1" type="TextureRect" parent="."]
+offset_left = 845.0
+offset_top = 305.0
+offset_right = 1160.0
+offset_bottom = 525.0
+texture = ExtResource("5_3fk65")
+expand_mode = 1
+
+[node name="Reply2" type="TextureRect" parent="."]
+visible = false
+offset_left = 758.0
+offset_top = 298.0
+offset_right = 1101.0
+offset_bottom = 531.0
+texture = ExtResource("6_8n83y")
+expand_mode = 1
+
+[node name="Reply3" type="TextureRect" parent="."]
+visible = false
+offset_left = 840.0
+offset_top = 307.0
+offset_right = 1169.0
+offset_bottom = 525.0
+texture = ExtResource("7_poc35")
+expand_mode = 1
+
+[node name="Reply4" type="TextureRect" parent="."]
+visible = false
+offset_left = 737.0
+offset_top = 315.0
+offset_right = 1102.0
+offset_bottom = 542.0
+texture = ExtResource("8_ox8fh")
+expand_mode = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
